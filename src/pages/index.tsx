@@ -67,9 +67,10 @@ export default function Home() {
       const ethersProvider = new ethers.providers.Web3Provider(
         web3authProvider as any
       );
+      const web3AuthSigner = ethersProvider.getSigner();
 
       const biconomySmartAccountConfig: BiconomySmartAccountV2Config = {
-        signer: ethersProvider.getSigner(),
+        signer: web3AuthSigner,
         chainId: chainId,
         biconomyPaymasterApiKey:
           "-RObQRX9ei.fc6918eb-c582-4417-9d5a-0507b17cfe71",
